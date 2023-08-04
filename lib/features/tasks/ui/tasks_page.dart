@@ -141,9 +141,15 @@ class _AddTaskPageState extends State<AddTaskPage> {
           body: Column(
             children: [
               TextField(
+                decoration: const InputDecoration(hintText: 'Title'),
                 controller: _title,
+                autofocus: true,
               ),
-              TextField(controller: _description),
+              TextField(
+                decoration: const InputDecoration(hintText: 'Description'),
+                controller: _description,
+                keyboardType: TextInputType.multiline,
+              ),
               ElevatedButton(
                   onPressed: () {
                     context.read<TasksBloc>().add(TasksAddEvent(
