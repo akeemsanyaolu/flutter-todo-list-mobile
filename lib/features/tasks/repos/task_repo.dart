@@ -34,13 +34,24 @@ class TasksRepo {
   }
 
   static Future<bool> deleteTask(int id) async {
-    var request = {
-      "id": id,
-    };
     var response = await http.delete(
       Uri.parse('http://10.0.2.2:8000/api/tasks/delete/$id/'),
       headers: {"Content-Type": "application/json; charset=UTF-8"},
     );
+    if (response.statusCode == 200) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  static Future<bool> updateTask(
+      int id, String title, String description) async {
+    var request = {"id": id, "title": title, "description": description};
+    var response = await http.delete(
+        Uri.parse('http://10.0.2.2:8000/api/tasks/update/$id/'),
+        headers: {"Content-Type": "application/json; charset=UTF-8"},
+        body: jsonEncode(request));
     if (response.statusCode == 200) {
       return true;
     } else {
