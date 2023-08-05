@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_todo_list_app/features/tasks/bloc/tasks_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -15,7 +13,6 @@ class _TasksPageState extends State<TasksPage> {
   //final taskBloc = TasksBloc();
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     //taskBloc.add(TasksInitialFetchEvent());
   }
