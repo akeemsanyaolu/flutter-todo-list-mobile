@@ -10,7 +10,7 @@ class TasksInitial extends TasksState {}
 class TasksFetchingLoadingState extends TasksState {}
 
 class TasksFetchingSuccesfulState extends TasksState {
-  List<TaskDataUiModel> tasks;
+  final List<TaskDataUiModel> tasks;
   TasksFetchingSuccesfulState({required this.tasks});
 }
 
@@ -21,3 +21,5 @@ class TasksAdditionSuccessState extends TasksActionState {}
 class TasksAdditionErrorState extends TasksActionState {}
 
 class TaskDeleteState extends TasksActionState {}
+
+class TaskUpdateState extends TasksActionState {}
