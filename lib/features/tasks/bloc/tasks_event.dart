@@ -6,9 +6,9 @@ abstract class TasksEvent {}
 class TasksInitialFetchEvent extends TasksEvent {}
 
 class TasksAddEvent extends TasksEvent {
-  String title;
-  String description;
-  bool complete;
+  final String title;
+  final String description;
+  final bool complete;
   TasksAddEvent(
       {required this.title, required this.description, required this.complete});
 }
@@ -16,6 +16,6 @@ class TasksAddEvent extends TasksEvent {
 class TaskInitialAddEvent extends TasksEvent {}
 
 class TaskDeleteEvent extends TasksEvent {
-  int id;
+  final int id;
   TaskDeleteEvent({required this.id});
 }
