@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:ffi';
 import 'package:flutter_todo_list_app/features/tasks/models/task_data_ui_model.dart';
 import 'package:http/http.dart' as http;
 
@@ -8,13 +7,11 @@ class TasksRepo {
     List<TaskDataUiModel> tasks = [];
     var response = await http.get(Uri.parse('http://10.0.2.2:8000/api/tasks'));
     List jsonResponse = jsonDecode(response.body);
-    //print(jsonResponse);
     for (int i = 0; i < jsonResponse.length; i++) {
       TaskDataUiModel task =
           TaskDataUiModel.fromJson(jsonResponse[i] as Map<String, dynamic>);
       tasks.add(task);
     }
-    //print(tasks);
     return tasks;
   }
 
