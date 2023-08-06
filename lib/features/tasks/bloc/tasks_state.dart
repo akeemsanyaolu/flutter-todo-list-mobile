@@ -22,4 +22,6 @@ class TasksAdditionErrorState extends TasksActionState {}
 
 class TaskDeleteState extends TasksActionState {}
 
+class TaskInitialUpdateState extends TasksActionState {}
+
 class TaskUpdateState extends TasksActionState {}
