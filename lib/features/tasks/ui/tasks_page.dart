@@ -27,6 +27,8 @@ class _TasksPageState extends State<TasksPage> {
             return const TasksListPage();
           case TaskInitialAddState:
             return const AddTaskPage();
+          case TaskInitialUpdateState:
+            return const AddTaskPage();
           default:
             return const LoadingPage();
         }
