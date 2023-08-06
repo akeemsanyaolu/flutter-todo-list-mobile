@@ -14,6 +14,7 @@ class TasksBloc extends Bloc<TasksEvent, TasksState> {
     on<TasksAddEvent>(tasksAddEvent);
     on<TaskInitialAddEvent>(taskInitialAddEvent);
     on<TaskDeleteEvent>(taskDeleteEvent);
+    on<TaskInitialUpdateEvent>(taskInitialUpdateEvent);
   }
 
   FutureOr<void> tasksInitialFetchEvent(
@@ -54,5 +55,10 @@ class TasksBloc extends Bloc<TasksEvent, TasksState> {
       emit(TasksFetchingLoadingState());
       emit(TasksFetchingSuccesfulState(tasks: tasks));
     }
+  }
+
+  FutureOr<void> taskInitialUpdateEvent(
+      TaskInitialUpdateEvent event, Emitter<TasksState> emit) {
+    emit(TaskUpdateState());
   }
 }

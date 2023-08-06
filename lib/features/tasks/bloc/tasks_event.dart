@@ -20,6 +20,8 @@ class TaskDeleteEvent extends TasksEvent {
   TaskDeleteEvent({required this.id});
 }
 
+class TaskInitialUpdateEvent extends TasksEvent {}
+
 class TaskUpdateEvent extends TasksEvent {
   final int id;
   TaskUpdateEvent({required this.id});
