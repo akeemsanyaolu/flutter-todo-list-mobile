@@ -12,6 +12,8 @@ class UpdateTaskPage extends StatefulWidget {
 }
 
 class _UpdateTaskPageState extends State<UpdateTaskPage> {
+  final TextEditingController _title = TextEditingController();
+  final TextEditingController _description = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +24,29 @@ class _UpdateTaskPageState extends State<UpdateTaskPage> {
             },
             icon: const Icon(Icons.arrow_back_ios)),
       ),
-      body: Column(),
+      body: Column(
+        children: [
+          TextField(
+            decoration: const InputDecoration(hintText: 'Title'),
+            controller: _title,
+            autofocus: true,
+          ),
+          TextField(
+            decoration: const InputDecoration(hintText: 'Description'),
+            controller: _description,
+            keyboardType: TextInputType.multiline,
+          ),
+          ElevatedButton(
+              onPressed: () {
+                context.read<TasksBloc>().add(TasksAddEvent(
+                    title: _title.text,
+                    description: _description.text,
+                    complete: true));
+                context.read<TasksBloc>().add(TasksInitialFetchEvent());
+              },
+              child: const Text('Create'))
+        ],
+      ),
     );
   }
 }
