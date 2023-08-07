@@ -32,7 +32,6 @@ class _TasksPageState extends State<TasksPage> {
           default:
             return const LoadingPage();
         }
-        //context.read<TasksBloc>().add(TasksInitialFetchEvent());
 
         // BlocConsumer<TasksBloc, TasksState>(
         //   bloc: TasksBloc(),
