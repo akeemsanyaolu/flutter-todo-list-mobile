@@ -44,7 +44,7 @@ class _UpdateTaskPageState extends State<UpdateTaskPage> {
                     complete: true));
                 context.read<TasksBloc>().add(TasksInitialFetchEvent());
               },
-              child: const Text('Create'))
+              child: const Text('Update'))
         ],
       ),
     );
