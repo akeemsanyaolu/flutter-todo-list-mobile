@@ -24,5 +24,8 @@ class TaskInitialUpdateEvent extends TasksEvent {}
 
 class TaskUpdateEvent extends TasksEvent {
   final int id;
-  TaskUpdateEvent({required this.id});
+  final String title;
+  final String description;
+  TaskUpdateEvent(
+      {required this.id, required this.title, required this.description});
 }

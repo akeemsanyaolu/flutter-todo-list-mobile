@@ -38,10 +38,11 @@ class _UpdateTaskPageState extends State<UpdateTaskPage> {
           ),
           ElevatedButton(
               onPressed: () {
-                context.read<TasksBloc>().add(TasksAddEvent(
-                    title: _title.text,
-                    description: _description.text,
-                    complete: true));
+                context.read<TasksBloc>().add(TaskUpdateEvent(
+                      id: 1,
+                      title: _title.text,
+                      description: _description.text,
+                    ));
                 context.read<TasksBloc>().add(TasksInitialFetchEvent());
               },
               child: const Text('Update'))
