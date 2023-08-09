@@ -178,33 +178,36 @@ class TasksWidget extends StatefulWidget {
 class _TasksWidgetState extends State<TasksWidget> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.grey.shade200,
-      padding: const EdgeInsets.all(16),
-      margin: const EdgeInsets.all(16),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                widget.successState.tasks[widget.index].title,
-                style: const TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w600,
+    return ElevatedButton(
+      onPressed: () {},
+      child: Container(
+        color: Colors.grey.shade200,
+        padding: const EdgeInsets.all(16),
+        margin: const EdgeInsets.all(16),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  widget.successState.tasks[widget.index].title,
+                  style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
-              ),
-              Text(widget.successState.tasks[widget.index].description),
-            ],
-          ),
-          IconButton(
-              onPressed: () {
-                context.read<TasksBloc>().add(TaskDeleteEvent(
-                    id: widget.successState.tasks[widget.index].id));
-              },
-              icon: const Icon(Icons.delete))
-        ],
+                Text(widget.successState.tasks[widget.index].description),
+              ],
+            ),
+            IconButton(
+                onPressed: () {
+                  context.read<TasksBloc>().add(TaskDeleteEvent(
+                      id: widget.successState.tasks[widget.index].id));
+                },
+                icon: const Icon(Icons.delete))
+          ],
+        ),
       ),
     );
   }
