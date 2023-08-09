@@ -20,7 +20,7 @@ class TasksBloc extends Bloc<TasksEvent, TasksState> {
   FutureOr<void> tasksInitialFetchEvent(
       TasksInitialFetchEvent event, Emitter<TasksState> emit) async {
     emit(TasksFetchingLoadingState());
-    //await Future.delayed(const Duration(seconds: 1));
+
     var tasks = await TasksRepo.fetchTasks();
     emit(TasksFetchingSuccesfulState(tasks: tasks));
   }
