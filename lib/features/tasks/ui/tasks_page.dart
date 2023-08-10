@@ -179,7 +179,11 @@ class _TasksWidgetState extends State<TasksWidget> {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: () {
+        context.read<TasksBloc>().add(TaskInitialUpdateEvent(
+            initialText: 'initialText',
+            initialDescription: 'initialDescription'));
+      },
       child: Container(
         color: Colors.grey.shade200,
         padding: const EdgeInsets.all(16),
