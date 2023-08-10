@@ -3,7 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_todo_list_app/features/tasks/bloc/tasks_bloc.dart';
 
 class UpdateTaskPage extends StatefulWidget {
-  const UpdateTaskPage({super.key});
+  final String initialText;
+  final String initialDescription;
+  const UpdateTaskPage(
+      {super.key, required this.initialText, required this.initialDescription});
 
   @override
   State<UpdateTaskPage> createState() => _UpdateTaskPageState();
