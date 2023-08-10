@@ -60,7 +60,6 @@ class TasksRepo {
   }
 
   static Future getInitialTask(int id, String title, String description) async {
-    var request = {"id": id, "title": title, "description": description};
     var response = await http.get(
       Uri.parse('http://10.0.2.2:8000/api/tasks/$id/'),
     );
