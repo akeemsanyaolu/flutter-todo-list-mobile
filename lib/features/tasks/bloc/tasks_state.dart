@@ -22,6 +22,16 @@ class TasksAdditionErrorState extends TasksActionState {}
 
 class TaskDeleteState extends TasksActionState {}
 
-class TaskInitialUpdateState extends TasksActionState {}
+class TaskInitialUpdateState extends TasksActionState {
+  final int id;
+  final String initialText;
+  final String initialDescription;
+
+  TaskInitialUpdateState({
+    required this.id,
+    required this.initialText,
+    required this.initialDescription,
+  });
+}
 
 class TaskUpdateState extends TasksActionState {}

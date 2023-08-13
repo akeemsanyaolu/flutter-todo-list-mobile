@@ -59,6 +59,9 @@ class TasksBloc extends Bloc<TasksEvent, TasksState> {
 
   FutureOr<void> taskInitialUpdateEvent(
       TaskInitialUpdateEvent event, Emitter<TasksState> emit) {
-    emit(TaskInitialUpdateState());
+    emit(TaskInitialUpdateState(
+        id: event.id,
+        initialText: event.initialText,
+        initialDescription: event.initialDescription));
   }
 }
