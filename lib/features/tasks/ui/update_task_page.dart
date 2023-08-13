@@ -15,6 +15,14 @@ class UpdateTaskPage extends StatefulWidget {
 class _UpdateTaskPageState extends State<UpdateTaskPage> {
   final TextEditingController _title = TextEditingController();
   final TextEditingController _description = TextEditingController();
+
+  @override
+  void initState() {
+    _title.text = widget.initialText;
+    _description.text = widget.initialDescription;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
