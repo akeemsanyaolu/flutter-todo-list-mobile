@@ -181,8 +181,10 @@ class _TasksWidgetState extends State<TasksWidget> {
     return ElevatedButton(
       onPressed: () {
         context.read<TasksBloc>().add(TaskInitialUpdateEvent(
-            initialText: 'initialText',
-            initialDescription: 'initialDescription'));
+            id: widget.successState.tasks[widget.index].id,
+            initialText: widget.successState.tasks[widget.index].title,
+            initialDescription:
+                widget.successState.tasks[widget.index].description));
       },
       child: Container(
         color: Colors.grey.shade200,

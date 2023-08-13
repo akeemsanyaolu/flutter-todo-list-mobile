@@ -21,11 +21,14 @@ class TaskDeleteEvent extends TasksEvent {
 }
 
 class TaskInitialUpdateEvent extends TasksEvent {
+  final int id;
   final String initialText;
   final String initialDescription;
 
   TaskInitialUpdateEvent(
-      {required this.initialText, required this.initialDescription});
+      {required this.id,
+      required this.initialText,
+      required this.initialDescription});
 }
 
 class TaskUpdateEvent extends TasksEvent {
