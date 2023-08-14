@@ -36,7 +36,7 @@ class _UpdateTaskPageState extends State<UpdateTaskPage> {
       body: Column(
         children: [
           TextField(
-            decoration: const InputDecoration(hintText: 'Title'),
+            decoration: InputDecoration(hintText: _title.text),
             controller: _title,
             autofocus: true,
           ),
@@ -45,6 +45,7 @@ class _UpdateTaskPageState extends State<UpdateTaskPage> {
             controller: _description,
             keyboardType: TextInputType.multiline,
           ),
+          Text(_title.text),
           ElevatedButton(
               onPressed: () {
                 context.read<TasksBloc>().add(TaskUpdateEvent(

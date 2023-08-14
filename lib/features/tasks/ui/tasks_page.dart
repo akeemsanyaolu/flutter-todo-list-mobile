@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_todo_list_app/features/tasks/bloc/tasks_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_todo_list_app/features/tasks/ui/update_task_page.dart';
 
 class TasksPage extends StatefulWidget {
   const TasksPage({super.key});
@@ -28,7 +29,11 @@ class _TasksPageState extends State<TasksPage> {
           case TaskInitialAddState:
             return const AddTaskPage();
           case TaskInitialUpdateState:
-            return const AddTaskPage();
+            final successState =
+                context.read<TasksBloc>().state as TaskInitialUpdateState;
+            return UpdateTaskPage(
+                initialText: successState.initialText,
+                initialDescription: successState.initialDescription);
           default:
             return const LoadingPage();
         }
