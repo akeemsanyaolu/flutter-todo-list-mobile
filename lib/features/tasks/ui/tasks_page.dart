@@ -171,6 +171,8 @@ class _TasksWidgetState extends State<TasksWidget> {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
+      style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all(Colors.transparent)),
       onPressed: () {
         context.read<TasksBloc>().add(TaskInitialUpdateEvent(
             id: widget.successState.tasks[widget.index].id,
