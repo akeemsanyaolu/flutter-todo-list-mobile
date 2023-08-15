@@ -38,9 +38,6 @@ class _TasksPageState extends State<TasksPage> {
             return const LoadingPage();
         }
 
-        //   //listenWhen: (previous, current) => current is TaskActionState,
-        //   //buildWhen: (previous, current) => current is! TaskActionState,
-        //   listener: (context, state) {},
         //   builder: (context, state) {
         //     switch (state.runtimeType) {
         //       case TasksFetchingLoadingState:
