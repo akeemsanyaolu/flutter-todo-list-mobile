@@ -38,8 +38,6 @@ class _TasksPageState extends State<TasksPage> {
             return const LoadingPage();
         }
 
-        // BlocConsumer<TasksBloc, TasksState>(
-        //   bloc: TasksBloc(),
         //   //listenWhen: (previous, current) => current is TaskActionState,
         //   //buildWhen: (previous, current) => current is! TaskActionState,
         //   listener: (context, state) {},
