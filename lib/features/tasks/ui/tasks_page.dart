@@ -38,13 +38,6 @@ class _TasksPageState extends State<TasksPage> {
             return const LoadingPage();
         }
 
-        //   builder: (context, state) {
-        //     switch (state.runtimeType) {
-        //       case TasksFetchingLoadingState:
-        //         return const Center(
-        //           child: CircularProgressIndicator(),
-        //         );
-
         //       case (TasksFetchingSuccesfulState):
         //         final successState = state as TasksFetchingSuccesfulState;
         //         return ListView.builder(
