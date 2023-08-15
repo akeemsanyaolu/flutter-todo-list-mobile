@@ -38,7 +38,6 @@ class _TasksPageState extends State<TasksPage> {
             return const LoadingPage();
         }
 
-        //       case (TasksFetchingSuccesfulState):
         //         final successState = state as TasksFetchingSuccesfulState;
         //         return ListView.builder(
         //           itemCount: successState.tasks.length,
